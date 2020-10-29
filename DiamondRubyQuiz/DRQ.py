@@ -211,21 +211,3 @@ class Question (QWidget):
                 b.setText('incorrect answer')
                 score = socre - 10
                 self.A6.setText('score:%s' % (score))
-
-         # class login:
-         #     pass
-
-         # class score:
-         #     pass
-
-         #    def exitt(self):
-         #        sys.exit()
-
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    for u in dir():
-        print(u)
-    app.setApplicationName("QUIZ APP")
-    window = Question()
-    app.exec_()

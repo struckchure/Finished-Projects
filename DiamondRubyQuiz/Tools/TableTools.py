@@ -1,7 +1,7 @@
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
-from DiamondRubyQuiz.Tools import Templates, LoopEmit, Database
+from . import Templates, LoopEmit, Database
 import sys
 
 

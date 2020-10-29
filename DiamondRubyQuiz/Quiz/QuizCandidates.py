@@ -1,7 +1,7 @@
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
-from Projects.DiamondRubyQuiz.Tools import Templates, TableTools, LoopEmit
+from Tools import Templates, TableTools, LoopEmit
 import sys
 
 
@@ -208,7 +208,7 @@ class QuizCandidates(QGroupBox):
 
 	def distributeTABLE(self):
 		try:
-			from Projects.DiamondRubyQuiz.Tools import Database
+			from Tools import Database
 
 			self.quiz_candidates = Database.get_quiz_candidate_all()
 

@@ -1,7 +1,7 @@
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
-from Projects.DiamondRubyQuiz.Tools import Templates, Database, LoopEmit
+from Tools import Templates, Database, LoopEmit
 import sys
 import time as t
 
@@ -269,11 +269,11 @@ class StartQuiz(QGroupBox):
 		self.background_stacked_widget.addWidget(self.central_group)
 		self.background_stacked_widget.setCurrentIndex(0)
 
-		from Projects.DiamondRubyQuiz.Quiz import Quiz
+		from Quiz import Quiz
 
 	def login_button_slot(self):
 		try:
-			from Projects.DiamondRubyQuiz.Tools import Database
+			from Tools import Database
 
 			if self.username.text():
 				if self.password.text():
@@ -314,7 +314,7 @@ class StartQuiz(QGroupBox):
 
 	def go_signal(self):
 		try:
-			from Projects.DiamondRubyQuiz.Quiz import Quiz
+			from Quiz import Quiz
 
 			self.current_date = str(QCalendarWidget().selectedDate()).replace('PyQt5.QtCore.QDate', '')
 

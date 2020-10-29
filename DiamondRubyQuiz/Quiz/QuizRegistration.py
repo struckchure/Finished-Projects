@@ -1,7 +1,7 @@
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
-from Projects.DiamondRubyQuiz.Tools import Templates
+from Tools import Templates
 import sys
 import time as t
 
@@ -371,8 +371,8 @@ class QuizRegister(QWidget):
 
 	def login_button_slot(self):
 		try:
-			from Projects.DiamondRubyQuiz.Tools import Database
-			from Projects.DiamondRubyQuiz.Quiz import StartQuiz
+			from Tools import Database
+			from Quiz import StartQuiz
 
 			all_usernames = Database.get_quiz_candidate_by_column('username')
 

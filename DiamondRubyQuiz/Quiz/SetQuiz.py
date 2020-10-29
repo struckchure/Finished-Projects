@@ -1,7 +1,7 @@
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
-from Projects.DiamondRubyQuiz.Tools import Templates
+from Tools import Templates
 import sys
 
 
@@ -320,7 +320,7 @@ class QuizSheet(QGroupBox):
 
 	def confirm_button_slot(self):
 		try:
-			from Projects.DiamondRubyQuiz.Tools import Database
+			from Tools import Database
 
 			self.all_usernames = Database.get_quiz_master_column('username')
 			self.all_passwords = Database.get_quiz_master_column('password')
@@ -350,7 +350,7 @@ class QuizSheet(QGroupBox):
 
 	def submit_slot_conf(self):
 		try:
-			from Projects.DiamondRubyQuiz.Tools import LoopEmit
+			from Tools import LoopEmit
 
 			self.submitSEQ = LoopEmit.QuestionEmit(self.current_number)
 			self.submitSEQ.countChanged.connect(self.submit_slot_helper)
@@ -360,7 +360,7 @@ class QuizSheet(QGroupBox):
 
 	def submit_slot_helper(self):
 		try:
-			from Projects.DiamondRubyQuiz.Tools import Database
+			from Tools import Database
 
 
 			Database.create_quiz(self.quiz_title.text())
@@ -644,7 +644,7 @@ class SetQuiz(QGroupBox):
 			'''
 		)
 
-		from Projects.DiamondRubyQuiz.Quiz import QuizMasterRegistration
+		from Quiz import QuizMasterRegistration
 
 		self.background_stacked_widget.addWidget(self.aid_group)
 		self.background_stacked_widget.addWidget(QuizMasterRegistration.QuizMasterRegister())
@@ -654,7 +654,7 @@ class SetQuiz(QGroupBox):
 
 	def register_quiz_slot(self):
 		try:
-			from Projects.DiamondRubyQuiz.Tools import Database
+			from Tools import Database
 
 			self.all_usernames = Database.get_quiz_master_column('username')
 			self.all_passwords = Database.get_quiz_master_column('password')

@@ -1,8 +1,8 @@
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
-from Projects.DiamondRubyQuiz.Tools import Templates
-from Projects.DiamondRubyQuiz.Tools import LoopEmit
+from Tools import Templates
+from Tools import LoopEmit
 import sys
 import time as t
 
@@ -338,7 +338,7 @@ class QuizPage(QGroupBox):
 
 	def yes_slot(self):
 		try:
-			from Projects.DiamondRubyQuiz.Tools import Database
+			from Tools import Database
 
 			# self.username
 			all_usernames = Database.get_quiz_candidate_by_column('username')
@@ -371,7 +371,7 @@ class QuizPage(QGroupBox):
 
 	def question_signal(self):
 		try:
-			from Projects.DiamondRubyQuiz.Tools import Database
+			from Tools import Database
 
 			self.question_topic = ''
 
@@ -436,7 +436,7 @@ class QuizPage(QGroupBox):
 			self.timer.setText(f'{rm[0]}:{rm[1]}')
 
 			if self.milli_sec_dealer <= 0:
-				from Projects.DiamondRubyQuiz.Tools import Database
+				from Tools import Database
 
 				# self.username
 				all_usernames = Database.get_quiz_candidate_by_column('username')

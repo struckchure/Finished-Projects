@@ -1,7 +1,7 @@
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
-from Projects.DiamondRubyQuiz.Tools import Templates
+from Tools import Templates
 import sys
 import time as t
 
@@ -134,7 +134,7 @@ class QuizMasterVerify(QDialog):
 
 	def verify_button_slot(self):
 		try:
-			from Projects.DiamondRubyQuiz.Tools import Database
+			from Tools import Database
 	
 			if self.username.text() and self.password.text():
 				if (self.username.text() == self.username_val) and (self.password.text() == self.password_val):
@@ -151,7 +151,7 @@ class QuizMasterVerify(QDialog):
 					message_box = QMessageBox()
 					message_box.about(self, 'Quiz Manager', msg)
 					
-					from Projects.DiamondRubyQuiz.Quiz import SetQuiz
+					from Quiz import SetQuiz
 
 					self.stacked_widget.addWidget(SetQuiz.QuizSheet(self.stacked_widget))
 					self.stacked_widget.setCurrentIndex(self.stacked_widget.currentIndex() + 1)
@@ -532,8 +532,8 @@ class QuizMasterRegister(QGroupBox):
 
 	def login_button_slot(self):
 		try:
-			from Projects.DiamondRubyQuiz.Tools import Database
-			from Projects.DiamondRubyQuiz.Quiz import StartQuiz
+			from Tools import Database
+			from Quiz import StartQuiz
 
 			all_usernames = Database.get_quiz_master_column('username')
 

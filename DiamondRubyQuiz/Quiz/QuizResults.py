@@ -1,7 +1,7 @@
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
-from Projects.DiamondRubyQuiz.Tools import Templates, TableTools, LoopEmit
+from Tools import Templates, TableTools, LoopEmit
 import sys
 
 
@@ -70,7 +70,7 @@ class Login(QDialog):
 
 	def login_button_slot(self):
 		try:
-			from Projects.DiamondRubyQuiz.Tools import Database
+			from Tools import Database
 
 			self.all_usernames = Database.get_quiz_master_column('username')
 			self.all_passwords = Database.get_quiz_master_column('password')
@@ -298,7 +298,7 @@ class QuizResults(QGroupBox):
 
 	def distributeTABLE(self):
 		try:
-			from Projects.DiamondRubyQuiz.Tools import Database
+			from Tools import Database
 
 			self.quiz_result = Database.get_quiz_check_all()
 

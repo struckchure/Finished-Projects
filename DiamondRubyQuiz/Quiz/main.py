@@ -1,7 +1,7 @@
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
-from Projects.DiamondRubyQuiz.Tools import Templates
+from Tools import Templates
 import sys
 
 
@@ -485,7 +485,7 @@ class Quiz(QGroupBox):
 		self.background_stacked_widget.addWidget(self.aid_group)
 		self.background_stacked_widget.setCurrentIndex(0)
 
-		from Projects.DiamondRubyQuiz.Quiz import StartQuiz, QuizRegistration, SetQuiz, CheckQuiz, QuizResults, QuizCandidates
+		from Quiz import StartQuiz, QuizRegistration, SetQuiz, CheckQuiz, QuizResults, QuizCandidates
 
 		self.background_stacked_widget.addWidget(StartQuiz.StartQuiz())
 		self.background_stacked_widget.addWidget(QuizRegistration.QuizRegister())
@@ -496,7 +496,7 @@ class Quiz(QGroupBox):
 
 	def start_quiz_slot(self):
 		try:
-			from Projects.DiamondRubyQuiz.Quiz import StartQuiz
+			from Quiz import StartQuiz
 
 			self.background_stacked_widget.setCurrentIndex(1)
 		except Exception as e:
@@ -504,7 +504,7 @@ class Quiz(QGroupBox):
 
 	def register_button_slot(self):
 		try:
-			from Projects.DiamondRubyQuiz.Quiz import QuizRegistration
+			from Quiz import QuizRegistration
 			
 			self.background_stacked_widget.setCurrentIndex(2)
 		except Exception as e:
@@ -512,7 +512,7 @@ class Quiz(QGroupBox):
 
 	def set_quiz_slot(self):
 		try:
-			from Projects.DiamondRubyQuiz.Quiz import SetQuiz
+			from Quiz import SetQuiz
 
 			self.background_stacked_widget.setCurrentIndex(3)
 		except Exception as e:
@@ -520,7 +520,7 @@ class Quiz(QGroupBox):
 
 	def check_quiz_slot(self):
 		try:
-			from Projects.DiamondRubyQuiz.Quiz import CheckQuiz
+			from Quiz import CheckQuiz
 
 			self.background_stacked_widget.setCurrentIndex(4)
 		except Exception as e:
@@ -528,7 +528,7 @@ class Quiz(QGroupBox):
 
 	def quiz_results_slot(self):
 		try:
-			from Projects.DiamondRubyQuiz.Quiz import QuizResults
+			from Quiz import QuizResults
 
 			self.background_stacked_widget.setCurrentIndex(5)
 		except Exception as e:
@@ -536,7 +536,7 @@ class Quiz(QGroupBox):
 
 	def quiz_candidates_slot(self):
 		try:
-			from Projects.DiamondRubyQuiz.Quiz import QuizCandidates
+			from Quiz import QuizCandidates
 
 			self.background_stacked_widget.setCurrentIndex(6)
 		except Exception as e:

@@ -3,20 +3,22 @@ from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 import sys
 
+
 class AnimatedButton(QPushButton):
     def __init__(self, parent=None):
-    	super().__init__(parent)
+        super().__init__(parent)
 
-    	self.setMinimumSize(120, 30)
+        self.setMinimumSize(120, 30)
 
-    	self.color1 = QColor(240, 53, 218)
-    	self.color2 = QColor(61, 217, 245)
-    	self._animation = QVariantAnimation(
-    		self, 
-    		valueChanged=self._animate,
-    		startValue=0.00001,
-    		endValue=0.9999,
-    		duration=250)
+        self.color1 = QColor(240, 53, 218)
+        self.color2 = QColor(61, 217, 245)
+        self._animation = QVariantAnimation(
+            self,
+            valueChanged=self._animate,
+            startValue=0.00001,
+            endValue=0.9999,
+            duration=250,
+        )
 
     def _animate(self, value):
         qss = """
@@ -33,19 +35,19 @@ class AnimatedButton(QPushButton):
                 spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 {self.color1.name()}, stop:{value} {self.color2.name()}, stop: 1.0 {self.color1.name()}
                 )
             """
-            
-        qss += grad 
+
+        qss += grad
         self.setStyleSheet(qss)
 
-    def enterEvent(self, event): 
-    	self._animation.setDirection(QAbstractAnimation.Forward) 
-    	self._animation.start() 
-    	super().enterEvent(event)
+    def enterEvent(self, event):
+        self._animation.setDirection(QAbstractAnimation.Forward)
+        self._animation.start()
+        super().enterEvent(event)
 
-    def leaveEvent(self, event): 
-    	self._animation.setDirection(QAbstractAnimation.Backward) 
-    	self._animation.start() 
-    	super().enterEvent(event)
+    def leaveEvent(self, event):
+        self._animation.setDirection(QAbstractAnimation.Backward)
+        self._animation.start()
+        super().enterEvent(event)
 
 
 class OptionButton(QPushButton):
@@ -57,11 +59,12 @@ class OptionButton(QPushButton):
         self.color1 = QColor(240, 53, 218)
         self.color2 = QColor(61, 217, 245)
         self._animation = QVariantAnimation(
-            self, 
+            self,
             valueChanged=self._animate,
             startValue=0.00001,
             endValue=0.9999,
-            duration=250)
+            duration=250,
+        )
 
     def _animate(self, value):
         qss = """
@@ -79,18 +82,18 @@ class OptionButton(QPushButton):
                 )
             """.format(
             color1=self.color1.name(), color2=self.color2.name(), value=value
-            )
-        qss += grad 
+        )
+        qss += grad
         self.setStyleSheet(qss)
 
-    def enterEvent(self, event): 
-        self._animation.setDirection(QAbstractAnimation.Forward) 
-        self._animation.start() 
+    def enterEvent(self, event):
+        self._animation.setDirection(QAbstractAnimation.Forward)
+        self._animation.start()
         super().enterEvent(event)
 
-    def leaveEvent(self, event): 
-        self._animation.setDirection(QAbstractAnimation.Backward) 
-        self._animation.start() 
+    def leaveEvent(self, event):
+        self._animation.setDirection(QAbstractAnimation.Backward)
+        self._animation.start()
         super().enterEvent(event)
 
 

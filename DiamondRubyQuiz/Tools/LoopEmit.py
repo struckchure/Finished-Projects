@@ -17,11 +17,12 @@ class QuestionEmit(QThread):
                 self.countChanged.emit(self.duration)
                 self.duration -= self.duration
         except Exception as e:
-            raise 
+            raise
 
-'''
+
+"""
 USAGE 
     self.submitSEQ = GetQuestions(self.number)
     self.submitSEQ.countChanged.connect(self.view_signal)
     self.submitSEQ.run()
-'''
+"""
